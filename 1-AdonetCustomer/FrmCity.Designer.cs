@@ -1,6 +1,6 @@
 ﻿namespace _1_AdonetCustomer
 {
-    partial class Form1
+    partial class FrmCity
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -29,6 +29,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,10 +190,23 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // Form1
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Gray;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(10, 402);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(99, 35);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Ana Menü";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // FrmCity
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1282, 449);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -206,7 +220,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Name = "Form1";
+            this.Name = "FrmCity";
             this.Text = "Şehir Bilgi Formu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -228,5 +242,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnBack;
     }
 }

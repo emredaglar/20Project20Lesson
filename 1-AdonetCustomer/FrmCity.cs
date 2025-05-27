@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace _1_AdonetCustomer
 {
-    public partial class Form1 : Form
+    public partial class FrmCity : Form
     {
-        public Form1()
+        public FrmCity()
         {
             InitializeComponent();
         }
@@ -75,6 +75,13 @@ namespace _1_AdonetCustomer
             dataGridView1.DataSource = dataTable;
             sqlConnection.Close();
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            FrmMap frmMap = new FrmMap();
+            this.Hide(); // Hide the current form
+            frmMap.Show();
         }
     }
 }
