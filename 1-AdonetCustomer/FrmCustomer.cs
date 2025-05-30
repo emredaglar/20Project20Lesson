@@ -34,13 +34,23 @@ namespace _1_AdonetCustomer
         private void FrmCustomer_Load(object sender, EventArgs e)
         {
             sqlConnection.Open();
-            
+
             SqlCommand command = new SqlCommand("Select * From TblCity", sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            dataGridView1.DataSource = dataTable;
-            sqlConnection.Close();
+            dataAdapter.Fill(dataTable);
+            cmbCity.ValueMember = "CityId";
+            cmbCity.DisplayMember = "CityName";
+            cmbCity.DataSource = dataTable;
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            sqlConnection.Open();
+            SqlCommand command = new SqlCommand("Insert Into TblCustomer (CustomerName, CustomerSurname, CustomerCity, CustomerBalance, CustomerStatus) values (@customerName, @customerSurname, @customerCity, @customerBalance, @customerStatus)", sqlConnection);
+            command.Parameters.AddWithValue("@customerName",txtName.Text);
+
         }
     }
 }
